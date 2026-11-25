@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Encabezado from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,9 +11,10 @@ function App() {
       <Encabezado/>
       <main id='principal'>
         <Routes>
-          
+
         </Routes>
       </main>
+      <Footer/>
     </>
   )
 }
