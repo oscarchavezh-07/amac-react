@@ -11,7 +11,7 @@ function App() {
       <Encabezado/>
       <main id='principal'>
         <Routes>
-
+          <Route path='/' />
         </Routes>
       </main>
       <Footer/>
