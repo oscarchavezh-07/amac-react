@@ -79,7 +79,7 @@ export default function ListadoVacantes() {
     <main className="pagina-listado-vacantes">
 
       <section className="intro">
-        <h1 id="titulo-principal">Vacantes disponibles</h1>
+        <h1>Vacantes disponibles</h1>
         <p>Aplica a una oferta hoy mismo.</p>
         <p>Busca por palabras clave o aplica filtros a la búsqueda.</p>
       </section>
