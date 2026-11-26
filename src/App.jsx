@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import ListadoVacantes from './pages/ListadoVacantes';
+import DetalleVacante from "./pages/DetalleVacante";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ListadoVacantes />} />
           <Route path="/vacantes" element={<ListadoVacantes />} />
+          <Route path="/vacante/:id" element={<DetalleVacante />} />
         </Routes>
       </main>
 
