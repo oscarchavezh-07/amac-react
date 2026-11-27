@@ -1,9 +1,5 @@
 export default function ResumenVacante({ vacante }) {
-  const fecha = new Date(vacante.creada_en).toLocaleDateString('es-MX', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric'
-  })
+  const fecha = new Date(vacante.creada_en).toLocaleDateString()
 
   return (
     <article className="tarjeta-detalle-vacante">
@@ -33,7 +29,7 @@ export default function ResumenVacante({ vacante }) {
           <div>
             <dt>Sueldo:</dt>
             <dd>
-              ${Number(vacante.sueldo).toLocaleString('es-MX')} / mes
+              ${Number(vacante.sueldo).toLocaleString()} / mes
             </dd>
           </div>
 
