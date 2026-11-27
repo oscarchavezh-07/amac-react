@@ -52,11 +52,11 @@ export default function FiltrosVacantes({
             <legend>Categoría de empleo</legend>
 
             {[
-              { valor: 'operativo', texto: 'Operativo' },
-              { valor: 'administrativo', texto: 'Administrativo' },
-              { valor: 'seguridad', texto: 'Seguridad' },
-              { valor: 'ventas', texto: 'Ventas' },
-              { valor: 'atencion-cliente', texto: 'Atención al cliente' }
+              { valor: 'Operativo', texto: 'Operativo' },
+              { valor: 'Administrativo', texto: 'Administrativo' },
+              { valor: 'Seguridad', texto: 'Seguridad' },
+              { valor: 'Ventas', texto: 'Ventas' },
+              { valor: 'Atencion al cliente', texto: 'Atención al cliente' }
             ].map(opcion => (
               <label className="opcion-filtro" key={opcion.valor}>
                 <input
