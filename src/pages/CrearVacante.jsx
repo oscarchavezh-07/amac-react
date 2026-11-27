@@ -135,7 +135,7 @@ export default function CrearVacante() {
             <hr className="login-separador-discontinuo" />
 
             <div className="registro-campos-contacto">
-              <CampoRegistro id="telefono" name="telefono" label="Teléfono de contacto (opcional)" type="tel" placeholder="Número de teléfono" autoComplete="tel" />
+              <CampoRegistro id="telefono" name="telefono" label="Teléfono de contacto (opcional)" type="tel" placeholder="Número de teléfono" autoComplete="tel" required= {false} />
             </div>
           </fieldset>
           <br/>
