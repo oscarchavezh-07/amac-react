@@ -1,0 +1,56 @@
+.lista-limpia {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .modal-titulo--error {
+    color: var(--falla);
+  }
+  
+  .boton-secundario:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  .vacante-empresa-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.625rem;
+    margin: 0;
+  }
+  
+  .vacante-empresa-encabezado .boton,
+  .vacante-empresa-acciones .boton-secundario,
+  .vacante-empresa-acciones .boton-cancelar {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .solicitud-recibida__dato {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  
+  .filtros-vacante__grupo .input {
+    width: 100%;
+  }
+  
+  .registro-opcion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0 0.625rem;
+  }
+  
+  .casilla input[type="radio"] {
+    border-radius: 50%;
+  }
+  
+  @media (max-width: 479px) {
+    .vacante-empresa-acciones-principales {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
