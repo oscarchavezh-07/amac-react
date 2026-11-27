@@ -12,6 +12,8 @@ import DetalleVacante from './pages/DetalleVacante';
 import RegistroCandidato from './pages/RegistroCandidato';
 import MisSolicitudes from './pages/MisSolicitudes';
 
+import RegistroEmpresa from './pages/RegistroEmpresa'
+
 function Portal() {
     return (
         <>
@@ -37,6 +39,7 @@ function App() {
     return (
         <Routes>
             <Route path="/registro-candidato" element={ sesion ? <Navigate to="/" replace /> : <RegistroCandidato /> } />
+            <Route path="/registro-empresa" element={ sesion ? <Navigate to="/" replace />:<RegistroEmpresa/>}/>
             <Route path="*" element={ sesion ? <Portal /> : <Login /> } />
         </Routes>
     );

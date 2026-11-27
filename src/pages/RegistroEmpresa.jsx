@@ -81,7 +81,6 @@ export default function RegistroEmpresa() {
         <section className="registro-encabezado">
           <h1 className="registro-titulo"> Registrarse como Empresa </h1>
           <hr className="login-separador" />
-          <p> Registra tu empresa para publicar vacantes y administrar las solicitudes recibidas. </p>
         </section>
 
         <form className="registro-formulario" onSubmit={registrarEmpresa} >
