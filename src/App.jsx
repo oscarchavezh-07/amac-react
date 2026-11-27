@@ -13,6 +13,7 @@ import RegistroCandidato from './pages/RegistroCandidato';
 import MisSolicitudes from './pages/MisSolicitudes';
 
 import RegistroEmpresa from './pages/RegistroEmpresa'
+import VacantesEmpresa from './pages/VacantesEmpresa';
 
 function Portal() {
     return (
@@ -33,16 +34,60 @@ function Portal() {
     );
 }
 
-function App() {
-    const { sesion } = useAuth();
-
-    return (
+function PortalEmpresa() {
+  return (
+    <>
+      <Header />
+      <div id="principal" className="main">
         <Routes>
-            <Route path="/registro-candidato" element={ sesion ? <Navigate to="/" replace /> : <RegistroCandidato /> } />
-            <Route path="/registro-empresa" element={ sesion ? <Navigate to="/" replace />:<RegistroEmpresa/>}/>
-            <Route path="*" element={ sesion ? <Portal /> : <Login /> } />
+          <Route path="/" element={<VacantesEmpresa />} />
+          <Route path="/vacantes-empresa" element={<VacantesEmpresa />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-    );
+      </div>
+
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default function App() {
+  const { sesion, perfil } = useAuth()
+
+  // public
+  if (!sesion) {
+    return (
+      <Routes>
+        <Route path="/registro-candidato" element={<RegistroCandidato />} />
+        <Route path="/registro-empresa" element={<RegistroEmpresa />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    )
+  }
+
+  // si por alguna extraña razón no hay perfil
+  if (!perfil) {
+    return (
+      <main>
+        <p> Cargando tu portal... si tarda mucho probablemente algo no se encontró tu perfil </p>
+      </main>
+    )
+  }
+
+  // roles (candidato y empresa, más tarde admin)
+  if (perfil.rol === 'candidato') {
+    return <Portal />
+  }
+
+  if (perfil.rol === 'empresa') {
+    return <PortalEmpresa />
+  }
+
+  // basicamente si por alguna razón se olvida poner un portal para tal rol
+  return (
+    <main>
+      <p role="alert"> Cómo obtuvo su cuenta de nuevo? </p>
+    </main>
+  )
+}
