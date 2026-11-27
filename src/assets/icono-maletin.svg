@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icono">
+<path id="Vector" d="M11.6667 16.3333H44.3333C46.9107 16.3333 49 18.4227 49 21V42C49 44.5773 46.9107 46.6667 44.3333 46.6667H11.6667C9.08934 46.6667 7 44.5773 7 42V21C7 18.4227 9.08934 16.3333 11.6667 16.3333Z" stroke-width="4.2" stroke="#202945"/>
+<path id="Vector_2" d="M21 16.3333V11.6667C21 10.429 21.4917 9.24201 22.3668 8.36684C23.242 7.49167 24.429 7 25.6667 7H30.3333C31.571 7 32.758 7.49167 33.6332 8.36684C34.5083 9.24201 35 10.429 35 11.6667V16.3333M7 30.3333H49" stroke-width="4.2" stroke-linecap="round" stroke="#202945"/>
+</g>
+</svg>
