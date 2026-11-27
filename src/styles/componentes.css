@@ -467,3 +467,40 @@
   font-size: var(--cuerpo-font-size, 1.125rem);
   line-height: var(--cuerpo-line-height, 150%);
 }
+
+/* Boton menu */
+.menu-usuario {
+    position: relative;
+}
+
+.menu-desplegable {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 100;
+    min-width: 170px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.menu-desplegable button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-desplegable button:hover {
+    background: #f5f7fa;
+}
+
+.menu-desplegable button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
