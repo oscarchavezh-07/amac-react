@@ -1,0 +1,86 @@
+.mi-perfil {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+    background: var(--tarjetas);
+    border-radius: 12px;
+    box-shadow: var(--sombra-basica-box-shadow);
+}
+
+.mi-perfil h1 {
+    color: var(--header-y-botones-principales);
+    margin-bottom: 10px;
+}
+
+.perfil-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.perfil-formulario .input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.perfil-formulario input[readonly],
+.perfil-formulario textarea[readonly] {
+    background-color: var(--fondo);
+}
+
+.perfil-formulario textarea {
+    resize: vertical;
+}
+
+.perfil-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.perfil-boton,
+.perfil-cancelar {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: var(--boton-font-family);
+    cursor: pointer;
+    border: 2px solid var(--header-y-botones-principales);
+}
+
+.perfil-boton {
+    background: var(--header-y-botones-principales);
+    color: white;
+}
+
+.perfil-cancelar {
+    background: white;
+    color: var(--header-y-botones-principales);
+}
+
+.perfil-acciones button:focus-visible {
+    outline: 3px solid var(--texto);
+    outline-offset: 3px;
+}
+
+.perfil-acciones button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.perfil-formulario [role="status"] {
+    color: var(--exito);
+}
+
+.perfil-formulario [role="alert"] {
+    color: var(--falla);
+}
+
+@media (max-width: 768px) {
+    .mi-perfil {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}

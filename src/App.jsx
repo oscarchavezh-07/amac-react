@@ -11,6 +11,7 @@ import ListadoVacantes from './pages/ListadoVacantes';
 import DetalleVacante from './pages/DetalleVacante';
 import RegistroCandidato from './pages/RegistroCandidato';
 import MisSolicitudes from './pages/MisSolicitudes';
+import MiPerfil from './pages/MiPerfil';
 
 function Portal() {
     return (
@@ -22,6 +23,7 @@ function Portal() {
                     <Route path="/vacantes" element={<ListadoVacantes />} />
                     <Route path="/vacante/:id" element={<DetalleVacante />} />
                     <Route path="/mis-solicitudes" element={<MisSolicitudes />} />
+                    <Route path="/mi-perfil" element={<MiPerfil />} />
                     {/*Comodín*/}
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
@@ -36,8 +38,8 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/registro-candidato" element={ sesion ? <Navigate to="/" replace /> : <RegistroCandidato /> } />
-            <Route path="*" element={ sesion ? <Portal /> : <Login /> } />
+            <Route path="/registro-candidato" element={sesion ? <Navigate to="/" replace /> : <RegistroCandidato />} />
+            <Route path="*" element={sesion ? <Portal /> : <Login />} />
         </Routes>
     );
 }
