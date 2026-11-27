@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { Link } from 'react-router-dom';
 
 import CampoRegistro from '../components/CampoRegistro';
 import SeccionDatosCandidato from '../components/SeccionDatosCandidato';
@@ -116,9 +117,10 @@ export default function RegistroCandidato() {
                         </p>
                     )}
 
-                    <button type="submit" className="boton boton-principal registro-submit" disabled={cargando} >
+                    <button type="submit" className="boton boton-principal" disabled={cargando} >
                         {cargando ? 'Registrando...' : 'Registrarse'}
                     </button>
+                    <Link to="/" className='boton boton-secundario'> Volver al Inicio de Sesión </Link>
                 </form>
             </div>
         </main>
