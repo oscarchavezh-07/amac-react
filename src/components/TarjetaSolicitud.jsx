@@ -12,6 +12,15 @@ const clasesEstatus = {
 export default function TarjetaSolicitud({solicitud,onCancelar,cancelando}) {
   const vacante = solicitud.vacante
   const empresa = vacante?.empresa
+  
+  function formatearFecha(fecha) {
+    if (!fecha) return 'Fecha no disponible'
+    return new Intl.DateTimeFormat('es-MX', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+    }).format(new Date(fecha))
+}
 
   const puedeCancelar = [
     'Enviada',
@@ -38,8 +47,7 @@ export default function TarjetaSolicitud({solicitud,onCancelar,cancelando}) {
 
         </div>
 
-        <p> Postulado el{' '} <time dateTime={solicitud.creada_en}> {solicitud.creada_en} </time>
-        </p>
+        <p> Postulado el{' '} <time dateTime={solicitud.creada_en}> {formatearFecha(solicitud.creada_en)} </time> </p>
 
         <hr className="divisor-filtros" />
         <p> {vacante?.ubicacion || 'Ubicación no disponible'} </p>
