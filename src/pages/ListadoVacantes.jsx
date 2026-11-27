@@ -6,6 +6,18 @@ import FiltrosVacantes from '../components/FiltrosVacante'
 
 import iconoBusqueda from '../assets/search-icon.png'
 
+/* async function probarConexion() {
+    const { data, error } = await supabase
+        .from('vacantes')
+        .select('*');
+
+    if (error) {
+        console.error('Error de conexión:', error);
+    } else {
+        console.log('Conexión correcta:', data);
+    }
+} */
+
 export default function ListadoVacantes() {
   const [vacantes, setVacantes] = useState([])
   const [busqueda, setBusqueda] = useState('')
@@ -16,6 +28,7 @@ export default function ListadoVacantes() {
   const [error, setError] = useState('')
 
   useEffect(() => {
+    // probarConexion();
     let vigente = true
 
     async function cargarVacantes() {
@@ -55,16 +68,24 @@ export default function ListadoVacantes() {
       }
 
       const { data, error } = await consulta
-
+      // para debugear, of course. Con solo una página basta, ¿no? :p
       if (vigente) {
         if (error) {
-          setError('No fue posible cargar las vacantes.')
-          setVacantes([])
-        } else {
-          setVacantes(data || [])
-        }
+        console.error('Error al cargar vacantes:', error);
 
-        setCargando(false)
+        console.log('Código:', error.code);
+        console.log('Mensaje:', error.message);
+        console.log('Detalles:', error.details);
+        console.log('Hint:', error.hint);
+        console.log('Estado HTTP:', error.status);
+
+        setError('No fue posible cargar las vacantes.')
+        setVacantes([])
+      } else {
+        setCargando(false);
+        console.log('Vacantes cargadas:', data);
+        setVacantes(data || [])
+      }
       }
     }
 

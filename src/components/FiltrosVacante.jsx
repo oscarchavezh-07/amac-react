@@ -24,8 +24,10 @@ export default function FiltrosVacantes({
             <legend>Horarios</legend>
 
             {[
-              { valor: 'completo', texto: 'Tiempo completo' },
-              { valor: 'medio', texto: 'Medio tiempo' }
+              { valor: 'matutino', texto: 'Matutino' },
+              { valor: 'vespertino', texto: 'Vespertino' },
+              { valor: 'medio', texto: 'Medio tiempo' },
+              { valor: 'fines', texto: 'Fines de semana' }
             ].map(opcion => (
               <label className="opcion-filtro" key={opcion.valor}>
                 <input
