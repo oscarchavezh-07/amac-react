@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 import ListadoVacantes from './pages/ListadoVacantes';
 import DetalleVacante from "./pages/DetalleVacante";
+import RegistroCandidato from "./pages/RegistroCandidato";
 
 function App() {
   return (
