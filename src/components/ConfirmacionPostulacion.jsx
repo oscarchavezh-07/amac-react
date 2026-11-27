@@ -16,7 +16,7 @@ export default function ConfirmacionPostulacion({
             <h2 id="titulo-modal">Confirmar postulación</h2>
 
             <p>
-              ¿Estás seguro de que deseas postularte a esta vacante?
+              ¿Deseas postularte a esta vacante?
             </p>
 
             <p>
