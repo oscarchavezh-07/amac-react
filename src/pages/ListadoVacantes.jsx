@@ -28,7 +28,7 @@ export default function ListadoVacantes() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    // probarConexion();
+
     let vigente = true
 
     async function cargarVacantes() {

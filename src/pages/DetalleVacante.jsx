@@ -248,10 +248,11 @@ export default function DetalleVacante() {
       <div className="contenedor-detalle">
 
         <h1>Detalles de la vacante</h1>
+        <br />
 
         <ResumenVacante vacante={vacante} />
-        <AccionesVacante vacante={vacante} yaPostulado={yaPostulado} onPostular={solicitarPostulacion} />
         <InformacionAdicionalVacante vacante={vacante} />
+        <AccionesVacante vacante={vacante} yaPostulado={yaPostulado} onPostular={solicitarPostulacion} />
 
       </div>
 

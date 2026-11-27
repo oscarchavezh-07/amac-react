@@ -81,6 +81,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+time {
+  font-style: italic;
+}
+
 /* Especificos detalle vacante */
 
 .pagina-detalle-vacante,

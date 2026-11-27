@@ -26,7 +26,8 @@ export default function ResumenVacante({ vacante }) {
             {vacante.descripcion}
           </p>
         </div>
-
+        <hr className="login-separador-discontinuo"/>
+        <p />
         <dl className="datos-vacante">
 
           <div>
@@ -57,9 +58,9 @@ export default function ResumenVacante({ vacante }) {
           </div>
 
         </dl>
-
+        
         <p className="fecha-publicacion">
-          Publicado el {fecha}
+          Publicado el <time datetime={fecha}>{fecha}</time>
         </p>
 
       </div>
