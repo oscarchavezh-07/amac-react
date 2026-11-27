@@ -56,7 +56,7 @@ export default function ResumenVacante({ vacante }) {
         </dl>
         
         <p className="fecha-publicacion">
-          Publicado el <time datetime={fecha}>{fecha}</time>
+          Publicado el <time dateTime={fecha}>{fecha}</time>
         </p>
 
       </div>
