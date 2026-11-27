@@ -88,6 +88,7 @@ export default function DetalleVacante() {
           setCargando(false)
           return
         }
+        
 
         perfilActual = datosPerfil
 
@@ -199,11 +200,6 @@ export default function DetalleVacante() {
         setModal({
           tipo: 'error',
           mensaje: 'Tu registro aún no ha sido aprobado por AMAC. Por favor espera.'
-        })
-
-        setModal({
-          tipo: 'error',
-          mensaje: 'Ocurrió un problema al enviar tu solicitud. Intenta nuevamente más tarde.'
         })
       }
 
