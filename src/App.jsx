@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import ListadoVacantes from './pages/ListadoVacantes';
 import DetalleVacante from './pages/DetalleVacante';
 import RegistroCandidato from './pages/RegistroCandidato';
+import MisSolicitudes from './pages/MisSolicitudes';
 
 function Portal() {
     return (
@@ -20,6 +21,7 @@ function Portal() {
                     <Route path="/" element={<ListadoVacantes />} />
                     <Route path="/vacantes" element={<ListadoVacantes />} />
                     <Route path="/vacante/:id" element={<DetalleVacante />} />
+                    <Route path="/mis-solicitudes" element={<MisSolicitudes />} />
                     {/*Comodín*/}
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
