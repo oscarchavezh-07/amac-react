@@ -633,3 +633,59 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Confirmación */
+.modal-postulacion {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Contenido Confirmación */
+.contenido-modal-postulacion {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 2rem;
+    border-radius: 12px;
+
+    background-color: var(--tarjetas);
+    color: var(--texto);
+
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenido-modal-postulacion h2 {
+    margin-bottom: 1rem;
+}
+
+.contenido-modal-postulacion p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.acciones-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.acciones-modal .boton {
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .acciones-modal {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
