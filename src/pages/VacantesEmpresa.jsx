@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../context/AuthContext'
 import TarjetaVacanteEmpresa from '../components/TarjetaVacanteEmpresa'
@@ -14,7 +14,9 @@ export default function VacantesEmpresa() {
   const [busqueda, setBusqueda] = useState('')
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState('')
-  const [mensaje, setMensaje] = useState('')
+  // Mensaje que manda CrearVacante al publicar
+  const ubicacion = useLocation()
+  const [mensaje, setMensaje] = useState(ubicacion.state?.mensaje || '')
   const [procesando, setProcesando] = useState(false)
 
   async function cargarVacantes() {

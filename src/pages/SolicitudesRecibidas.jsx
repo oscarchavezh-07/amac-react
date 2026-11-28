@@ -31,6 +31,8 @@ export default function SolicitudesRecibidas() {
           candidato_id,
           estatus,
           creada_en,
+          estatus_actualizado_en,
+          etapa,
           candidato:perfiles!solicitudes_candidato_id_fkey (
             id,
             nombre,
@@ -92,7 +94,7 @@ export default function SolicitudesRecibidas() {
         .eq('id', solicitud.id)
         .eq('vacante_id', solicitud.vacante_id)
         .in('estatus', ['Enviada', 'En revisión'])
-        .select('id, estatus')
+        .select('id, estatus, estatus_actualizado_en')
         .single()
 
       if (error) throw error
@@ -100,7 +102,7 @@ export default function SolicitudesRecibidas() {
       setSolicitudes(actuales =>
         actuales.map(item =>
           item.id === data.id
-            ? { ...item, estatus: data.estatus }
+            ? { ...item, estatus: data.estatus, estatus_actualizado_en: data.estatus_actualizado_en }
             : item
         )
       )
@@ -112,6 +114,14 @@ export default function SolicitudesRecibidas() {
     } finally {
       setSolicitudProcesando(null)
     }
+  }
+
+  // Extra RF-055: refleja en la lista la etapa que se acaba de guardar
+  function cambiarEtapa(solicitudId, etapa) {
+    setSolicitudes(actuales =>
+      actuales.map(item => item.id === solicitudId ? { ...item, etapa } : item)
+    )
+    setMensaje('La etapa del proceso se actualizó correctamente.')
   }
 
   const solicitudesFiltradas = solicitudes.filter(solicitud => {
@@ -157,7 +167,7 @@ export default function SolicitudesRecibidas() {
         ) : (
           <div className="solicitudes-listado">
             {solicitudesFiltradas.map(solicitud => (
-              <TarjetaSolicitudEmpresa key={solicitud.id} solicitud={solicitud} onCambiarEstatus={cambiarEstatus} procesando={solicitudProcesando === solicitud.id} />
+              <TarjetaSolicitudEmpresa key={solicitud.id} solicitud={solicitud} onCambiarEstatus={cambiarEstatus} onCambiarEtapa={cambiarEtapa} procesando={solicitudProcesando === solicitud.id} />
             ))}
           </div>
         )}

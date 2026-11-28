@@ -12,6 +12,9 @@
   --falla: #b12424;
   --pantone: #cae4ef;
   --pantone2: #fddaad;
+  /* fondos de avisos (extras) */
+  --fondo-error: #ffc6c6;
+  --fondo-exito: #e3f1de;
 
   /* fonts */
   --titulo-font-family: "Baskervville-SemiBold";

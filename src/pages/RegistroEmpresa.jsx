@@ -28,7 +28,8 @@ export default function RegistroEmpresa() {
     const telefono = formulario.get('telefono').trim()
     const correo = formulario.get('correo').trim()
     const contrasena = formulario.get('contrasena')
-    const terminos = formulario.get('terminos')
+    // Las dos casillas de TerminosRegistro
+    const terminos = formulario.get('aceptar-servicio') && formulario.get('aceptar-privacidad')
 
     if (!terminos) {
       setError('Debes aceptar los términos y condiciones.')

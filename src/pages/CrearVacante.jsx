@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../context/AuthContext'
 import CampoRegistro from '../components/CampoRegistro'
+import { HORARIOS, CATEGORIAS } from '../lib/catalogos'
 
 export default function CrearVacante() {
   const { sesion } = useAuth()
@@ -25,7 +26,7 @@ export default function CrearVacante() {
     const sueldo = Number(formulario.get('sueldo'))
     const ubicacion = formulario.get('ubicacion').trim()
     const horario = formulario.get('horario')
-    const categoria = formulario.get('categoria').trim()
+    const categoria = formulario.get('categoria')
     const descripcion = formulario.get('descripcion').trim()
     const requisitos = formulario.get('requisitos').trim()
     const prestaciones = formulario.get('prestaciones').trim()
@@ -95,14 +96,20 @@ export default function CrearVacante() {
                   <option value="" disabled>
                     Selecciona un horario
                   </option>
-                  <option value="Matutino">Matutino</option>
-                  <option value="Vespertino">Vespertino</option>
-                  <option value="Medio tiempo">Medio tiempo</option>
-                  <option value="Fines de semana">Fines de semana</option>
+                  {HORARIOS.map(o => <option key={o.valor} value={o.valor}>{o.texto}</option>)}
                 </select>
               </div>
 
-              <CampoRegistro id="categoria" name="categoria" label="Categoría" type="text" placeholder="Ej. Seguridad, Ventas, Administración" required />
+              {/* Misma lista que los filtros del listado, para que la vacante aparezca al filtrar */}
+              <div className="campo-registro">
+                <label htmlFor="categoria">Categoría</label>
+                <select id="categoria" name="categoria" required defaultValue="" >
+                  <option value="" disabled>
+                    Selecciona una categoría
+                  </option>
+                  {CATEGORIAS.map(o => <option key={o.valor} value={o.valor}>{o.texto}</option>)}
+                </select>
+              </div>
             </div>
           </fieldset>
 

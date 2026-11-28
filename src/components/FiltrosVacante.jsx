@@ -1,3 +1,5 @@
+import { HORARIOS, CATEGORIAS } from '../lib/catalogos'
+
 export default function FiltrosVacantes({
   horarios,
   setHorarios,
@@ -23,12 +25,7 @@ export default function FiltrosVacantes({
           <fieldset>
             <legend>Horarios</legend>
 
-            {[
-              { valor: 'Matutino', texto: 'Matutino' },
-              { valor: 'Vespertino', texto: 'Vespertino' },
-              { valor: 'Medio tiempo', texto: 'Medio tiempo' },
-              { valor: 'Fines de semana', texto: 'Fines de semana' }
-            ].map(opcion => (
+            {HORARIOS.map(opcion => (
               <label className="opcion-filtro" key={opcion.valor}>
                 <input
                   type="checkbox"
@@ -51,13 +48,7 @@ export default function FiltrosVacantes({
           <fieldset>
             <legend>Categoría de empleo</legend>
 
-            {[
-              { valor: 'Operativo', texto: 'Operativo' },
-              { valor: 'Administrativo', texto: 'Administrativo' },
-              { valor: 'Seguridad', texto: 'Seguridad' },
-              { valor: 'Ventas', texto: 'Ventas' },
-              { valor: 'Atencion al cliente', texto: 'Atención al cliente' }
-            ].map(opcion => (
+            {CATEGORIAS.map(opcion => (
               <label className="opcion-filtro" key={opcion.valor}>
                 <input
                   type="checkbox"

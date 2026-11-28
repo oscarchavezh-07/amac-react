@@ -1,5 +1,7 @@
 
 import { useEffect, useState } from 'react'
+import SelectorEtapa from './SelectorEtapa'
+import ProgresoEtapas from './ProgresoEtapas'
 
 function formatearFecha(fecha) {
   return new Date(fecha).toLocaleDateString('es-MX', {
@@ -12,6 +14,7 @@ function formatearFecha(fecha) {
 export default function TarjetaSolicitudEmpresa({
   solicitud,
   onCambiarEstatus,
+  onCambiarEtapa,
   procesando
 }) {
   const [nuevoEstatus, setNuevoEstatus] = useState(
@@ -51,6 +54,11 @@ export default function TarjetaSolicitudEmpresa({
         </div>
         <p> Solicitud recibida el{' '} <time dateTime={solicitud.creada_en}> {formatearFecha(solicitud.creada_en)} </time> </p>
 
+        {/* Extra RF-024: cuándo cambió el estatus por última vez */}
+        {solicitud.estatus_actualizado_en && (
+          <p> Estatus actualizado el{' '} <time dateTime={solicitud.estatus_actualizado_en}> {formatearFecha(solicitud.estatus_actualizado_en)} </time> </p>
+        )}
+
         <hr className="divisor-filtros" />
 
         <div className="datos-candidato">
@@ -85,6 +93,10 @@ export default function TarjetaSolicitudEmpresa({
             </div>
           </>
         )}
+
+        {/* Extra RF-055: etapas del proceso de selección */}
+        <ProgresoEtapas estatus={solicitud.estatus} etapa={solicitud.etapa} />
+        <SelectorEtapa key={solicitud.etapa || 'sin-etapa'} solicitud={solicitud} onCambio={etapa => onCambiarEtapa?.(solicitud.id, etapa)} />
 
         {!puedeActualizar && (
           <p className="solicitud-estatus-final"> Esta solicitud ya tiene un estatus final y no puede modificarse. </p>

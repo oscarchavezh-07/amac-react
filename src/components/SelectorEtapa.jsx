@@ -1,6 +1,5 @@
 // Extra RF-055 (lado de la empresa): avanzar al candidato de etapa.
-// Pensado para la tarjeta de "Solicitudes recibidas" (TarjetaSolicitudEmpresa):
-//   <SelectorEtapa solicitud={solicitud} onCambio={etapa => ...actualizar la lista...} />
+// Se usa en TarjetaSolicitudEmpresa (Solicitudes recibidas).
 // Solo aplica mientras la solicitud está "En revisión"; la política RLS
 // "Empresa cambia el estatus" impide modificar solicitudes de otras empresas.
 import { useState } from 'react'
