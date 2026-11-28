@@ -5,7 +5,12 @@ Aplicación web desarrollada para la Asociación Mexicana de Ayuda a los Adultos
 El sistema permite la interacción entre tres tipos de usuarios: candidatos, empresas y administradores. Cuenta con autenticación, control de acceso por roles, almacenamiento de información en una base de datos y gestión de archivos.
 
 ## 0. Miembros del equipo
-
+* Oscar Eduardo Chávez Hernández: Mantenimiento del repositorio, flujos obligatorios [y respectivos componentes] de candidato y empresa, mantenimiento de la BD en Supabase, publicación en Vercel,
+  ###### Aparentemente escribir este README ahora también
+* Javier Oscar Wong Mora: Flujo de las pantallas y componentes opcionales, apoyo con la BD relacionada a los extras, corección de algunos errores
+* Mariana Gomez del Angel: Diseño de la presentación y guión para video, comienzo de las pantallas de perfil...
+* Marco Antonio Monsivais Macias: inicialización del flujo de la empresa... 
+Y todos contribuyeron para el video... supongo
 ## 1. Tecnologías utilizadas
 
 | Tecnología | Uso |
@@ -123,6 +128,9 @@ También se utiliza el bucket de almacenamiento `logos` para guardar las imágen
 - Cada solicitud relaciona una vacante con un candidato.
 - Cada favorito relaciona un candidato con una vacante.
 - Los registros relacionados se eliminan en cascada cuando se elimina el perfil, la vacante o el registro correspondiente.
+
+<img width="2260" height="1374" alt="image" src="https://github.com/user-attachments/assets/8202a9f4-bc1f-4346-bcc0-346c49d2097c" />
+
 
 ### Seguridad y políticas RLS
 
