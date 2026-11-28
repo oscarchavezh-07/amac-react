@@ -57,15 +57,20 @@ export default function RegistroCandidato() {
             }
 
             if (data.session) {
-                setMensaje('Tu registro se realizó correctamente. Ya puedes acceder a tu cuenta.');
+                setMensaje(
+                    'Tu registro se realizó correctamente. Ya puedes acceder a tu cuenta.'
+                );
             } else {
-                setMensaje('Tu registro se realizó correctamente. Revisa tu correo para confirmar tu cuenta.');
+                setMensaje(
+                    'Tu registro se realizó correctamente. Revisa tu correo para confirmar tu cuenta.'
+                );
             }
 
             e.currentTarget.reset();
 
         } catch (err) {
             console.error('Error al registrar candidato:', err);
+
             if (err.code === 'user_already_exists') {
                 setError('Este correo ya se encuentra registrado.');
             } else {
