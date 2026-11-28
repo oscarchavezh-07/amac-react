@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom'
+import ProgresoEtapas from './ProgresoEtapas'
 
 const clasesEstatus = {
   'Enviada': 'estado-enviada',
@@ -48,6 +49,14 @@ export default function TarjetaSolicitud({solicitud,onCancelar,cancelando}) {
         </div>
 
         <p> Postulado el{' '} <time dateTime={solicitud.creada_en}> {formatearFecha(solicitud.creada_en)} </time> </p>
+
+        {/* Extra RF-024: cuándo cambió el estatus por última vez */}
+        {solicitud.estatus_actualizado_en && (
+          <p> Estatus actualizado el{' '} <time dateTime={solicitud.estatus_actualizado_en}> {formatearFecha(solicitud.estatus_actualizado_en)} </time> </p>
+        )}
+
+        {/* Extra RF-055: etapas del proceso de selección */}
+        <ProgresoEtapas estatus={solicitud.estatus} etapa={solicitud.etapa} />
 
         <hr className="divisor-filtros" />
         <p> {vacante?.ubicacion || 'Ubicación no disponible'} </p>

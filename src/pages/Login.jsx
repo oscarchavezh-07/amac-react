@@ -71,7 +71,7 @@ export default function Login() {
                             <input type="password" id="contrasena" name="contrasena" className="input" placeholder="Escribe una respuesta" autoComplete="current-password" required />
                         </div>
 
-                        <a href="#" className="login-recuperar" onClick={(e) => e.preventDefault()} > ¿Olvidaste tu contraseña? </a>
+                        <Link to="/recuperar" className="login-recuperar"> ¿Olvidaste tu contraseña? </Link>
                         <hr className="login-separador-discontinuo" />
                         <p className="login-terminos"> Al iniciar sesión aceptas los {' '} <Link to="/terminos-servicio"> términos de Servicio y Privacidad de AMAC. </Link> </p>
                         {mensaje && (

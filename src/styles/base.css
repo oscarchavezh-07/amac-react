@@ -190,3 +190,94 @@ time {
   margin: 0 auto;
   padding: 1.25rem;
 }
+
+/* Creacion de vacantes */
+.campo-registro select,
+.campo-registro textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+
+  font-family: var(--cuerpo-font-family);
+  font-size: var(--cuerpo-font-size);
+  font-weight: var(--cuerpo-font-weight);
+  line-height: var(--cuerpo-line-height);
+  color: var(--texto);
+
+  background-color: var(--tarjetas);
+  border: 1px solid var(--contorno);
+  border-radius: 0.5rem;
+
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select {
+  min-height: 3.25rem;
+  cursor: pointer;
+}
+
+select:invalid {
+  color: var(--contorno);
+}
+
+.campo-registro textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.campo-registro label {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  font-family: var(--etiqueta-font-family);
+  font-size: var(--etiqueta-font-size);
+  font-weight: var(--etiqueta-font-weight);
+  color: var(--texto);
+}
+
+select:focus,
+.campo-registro textarea:focus {
+  outline: none;
+  border-color: var(--header-y-botones-principales);
+  box-shadow: 0 0 0 3px rgba(32, 41, 69, 0.15);
+}
+
+.campo-registro textarea::placeholder {
+  color: var(--contorno);
+  opacity: 1;
+}
+
+select:disabled,
+.campo-registro textarea:disabled {
+  background-color: var(--fondo);
+  color: var(--contorno);
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  select,
+  .campo-registro textarea {
+    font-size: 1rem;
+  }
+
+  .campo-registro textarea {
+    min-height: 6rem;
+  }
+}
+
+/* Extras: utilidades */
+
+/* Texto solo para lectores de pantalla */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Formularios cortos (recuperar contraseña) */
+.login-contenedor--estrecho {
+  max-width: 36rem;
+}

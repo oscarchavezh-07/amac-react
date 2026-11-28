@@ -504,3 +504,237 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+/* Extras: avisos de error y de éxito */
+
+.aviso-error,
+.aviso-exito:not(:empty) {
+  margin: 0.625rem 0;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  color: var(--texto);
+  font-family: var(--etiqueta-font-family);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.aviso-error {
+  background: var(--fondo-error);
+  border: 2px solid var(--falla);
+}
+
+.aviso-exito:not(:empty) {
+  background: var(--fondo-exito);
+  border: 2px solid var(--exito);
+}
+
+.estado-cancelada {
+  color: #5c5c5c;
+}
+
+/* Extras: enlaces del menú del usuario */
+
+.menu-desplegable a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.menu-desplegable a:hover {
+  background: var(--fondo);
+}
+
+/* Extras: vacantes guardadas (RF-041) */
+
+.boton-favorita {
+  gap: 0.5rem;
+}
+
+.boton-favorita img {
+  width: 1.25rem;
+  height: auto;
+  border-radius: 0;
+}
+
+.boton-favorita[aria-pressed="true"] {
+  border-color: var(--header-y-botones-principales);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.guardada .boton-cancelar {
+  align-self: flex-end;
+  flex: none;
+  min-width: 14rem;
+}
+
+.guardada-no-disponible {
+  padding: 1rem;
+  background: var(--tarjetas);
+  border: 2px dashed var(--contorno);
+  border-radius: 0.375rem;
+}
+
+.estado-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1.75rem 0.9375rem;
+  background: var(--tarjetas);
+  border: 2px solid var(--contorno);
+  border-radius: 0.375rem;
+  box-shadow: var(--sombra-basica-box-shadow);
+  text-align: center;
+}
+
+/* Extras: etapas del proceso (RF-055) */
+
+.progreso-etapas-titulo {
+  margin-bottom: 0.5rem;
+  font-family: var(--etiqueta-font-family);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.etapa-marca {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--contorno);
+  border-radius: 50%;
+  background: var(--tarjetas);
+  font-family: var(--etiqueta-font-family);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.etapa-completa .etapa-marca {
+  color: var(--tarjetas);
+  background: var(--exito);
+  border-color: var(--exito);
+}
+
+.etapa-actual .etapa-marca {
+  color: var(--tarjetas);
+  background: var(--header-y-botones-principales);
+  border-color: var(--header-y-botones-principales);
+}
+
+.etapa-actual {
+  font-family: var(--etiqueta-font-family);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.etapa-pendiente {
+  color: #4a4a4a;
+}
+
+/* Extras: logo de la empresa (RF-016) */
+
+.logo-vacante {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.625rem;
+  vertical-align: middle;
+  object-fit: contain;
+  background: var(--tarjetas);
+  border-radius: 0.375rem;
+}
+
+.logo-empresa {
+  background: var(--tarjetas);
+  border: 2px solid var(--contorno);
+  border-radius: 0.375rem;
+  box-shadow: var(--sombra-basica-box-shadow);
+}
+
+.logo-empresa-actual img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  border: 1px solid var(--contorno);
+}
+
+/* Caja para adjuntar archivo ("Adjuntar nuevo Logo" del Figma) */
+.campo-archivo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  max-width: 23.4375rem;
+  min-height: 2.75rem;
+  padding: 0.625rem;
+  background: var(--tarjetas);
+  border: 2px solid var(--contorno);
+  border-radius: 0.375rem;
+  box-shadow: 0 0.25rem 0.125rem rgb(0 0 0 / 10%);
+}
+
+.campo-archivo input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+
+.campo-archivo img {
+  flex: none;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  border-radius: 0;
+}
+
+/* Extras: panel de administrador (RF-054, Figma) */
+
+.admin-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.625rem;
+  padding: 0.9375rem;
+  color: #000;
+  background: var(--tarjetas);
+  border: 2px solid var(--contorno);
+  border-radius: 0.375rem;
+  box-shadow: var(--sombra-basica-box-shadow);
+}
+
+.admin-tarjeta h3 {
+  font-family: var(--etiqueta-font-family);
+  font-size: var(--etiqueta-font-size);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.admin-linea {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 2px solid var(--contorno);
+}
+
+.admin-datos dt {
+  font-family: var(--etiqueta-font-family);
+  font-weight: var(--etiqueta-font-weight);
+}
+
+.admin-datos dd {
+  margin: 0.125rem 0 0;
+}
+
+.admin-aprobar,
+.admin-rechazar {
+  max-width: 18.4375rem;
+  min-height: 3rem;
+  background: var(--tarjetas);
+}
+
+.admin-aprobar {
+  color: var(--exito);
+  border: 1px solid var(--exito);
+}
+
+.admin-rechazar {
+  color: var(--falla);
+  border: 1px solid var(--falla);
+}

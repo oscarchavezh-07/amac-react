@@ -689,3 +689,88 @@
         justify-content: center;
     }
 }
+
+/* Extras: vacantes guardadas (RF-041) */
+
+.guardadas-listado {
+  display: grid;
+  gap: 1.5625rem;
+}
+
+.guardada {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* Extras: etapas del proceso (RF-055) */
+
+.progreso-etapas ol {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etapa {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.selector-etapa {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* Extras: logo de la empresa (RF-016) */
+
+.logo-empresa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+.logo-empresa-actual,
+.logo-empresa-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  min-width: 0;
+}
+
+/* Extras: panel de administrador (RF-054) */
+
+.admin-datos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem 0.625rem;
+  margin: 0;
+}
+
+.admin-dato-completo {
+  grid-column: 1 / -1;
+}
+
+.admin-seccion {
+  margin-top: 1.5rem;
+}
+
+.admin-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .logo-empresa {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .admin-datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
