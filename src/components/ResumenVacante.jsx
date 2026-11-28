@@ -5,6 +5,10 @@ export default function ResumenVacante({ vacante }) {
     <article className="tarjeta-detalle-vacante">
 
       <header className="encabezado-vacante">
+        {/* Extra RF-016: logo de la empresa */}
+        {vacante.empresa?.logo_url && (
+          <img className="logo-vacante" src={vacante.empresa.logo_url} alt={`Logo de ${vacante.empresa.nombre}`} />
+        )}
         <h2>{vacante.titulo}</h2>
       </header>
 

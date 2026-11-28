@@ -45,7 +45,7 @@ export default function ListadoVacantes() {
           horario,
           categoria,
           descripcion,
-          empresa:perfiles(nombre)
+          empresa:perfiles(nombre, logo_url)
         `)
         .eq('estado', 'activa')
         .order('creada_en', { ascending: false })

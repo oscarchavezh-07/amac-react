@@ -1,6 +1,14 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { supabase } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext';
+
+// Extras: enlaces del menú según el rol
+const ENLACES_POR_ROL = {
+  candidato: [{ a: '/guardadas', texto: 'Vacantes guardadas' }],
+  empresa: [{ a: '/empresa/logo', texto: 'Logo de la empresa' }],
+  admin: [{ a: '/admin', texto: 'Panel de administrador' }]
+};
 
 import logo from "../assets/logo-header0.png";
 import iconoAyuda from "../assets/icono-tel-fono0.svg";
@@ -11,6 +19,8 @@ function Header() {
   const [cargando, setCargando] = useState(false);
 
   const navigate = useNavigate();
+  const { perfil } = useAuth();
+  const enlacesExtra = ENLACES_POR_ROL[perfil?.rol] || [];
 
   async function cerrarSesion() {
     setCargando(true);
@@ -49,6 +59,11 @@ function Header() {
 
                           {menuAbierto && (
                               <div className="menu-desplegable">
+                                  {enlacesExtra.map(enlace => (
+                                      <Link key={enlace.a} to={enlace.a} onClick={() => setMenuAbierto(false)} >
+                                          {enlace.texto}
+                                      </Link>
+                                  ))}
                                   <button type="button" onClick={cerrarSesion} disabled={cargando} >
                                       {cargando ? 'Cerrando sesión...' : 'Cerrar sesión'}
                                   </button>

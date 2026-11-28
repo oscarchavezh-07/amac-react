@@ -4,7 +4,13 @@ export default function TarjetaVacante({ vacante }) {
   return (
     <article className="tarjeta-vacante">
 
-      <h2>{vacante.titulo}</h2>
+      <h2>
+        {/* Extra RF-016: logo de la empresa */}
+        {vacante.empresa?.logo_url && (
+          <img className="logo-vacante" src={vacante.empresa.logo_url} alt="" />
+        )}
+        {vacante.titulo}
+      </h2>
 
       <div className="detalles-vacante">
 

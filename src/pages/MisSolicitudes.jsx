@@ -51,6 +51,8 @@ export default function MisSolicitudes() {
           candidato_id,
           estatus,
           creada_en,
+          estatus_actualizado_en,
+          etapa,
           vacante:vacantes!inner (
             id,
             titulo,

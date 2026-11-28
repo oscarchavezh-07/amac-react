@@ -7,6 +7,7 @@ import ResumenVacante from '../components/ResumenVacante'
 import InformacionAdicionalVacante from '../components/InformacionAdicionalVacante'
 import AccionesVacante from '../components/AccionesVacante'
 import ConfirmacionPostulacion from '../components/ConfirmacionPostulacion'
+import BotonFavorita from '../components/BotonFavorita'
 
 export default function DetalleVacante() {
   const { id } = useParams()
@@ -36,7 +37,7 @@ export default function DetalleVacante() {
           .from('vacantes')
           .select(`
             *,
-            empresa:perfiles!vacantes_empresa_id_fkey(nombre)
+            empresa:perfiles!vacantes_empresa_id_fkey(nombre, logo_url)
           `)
           .eq('id', id)
           .maybeSingle()
@@ -248,7 +249,11 @@ export default function DetalleVacante() {
 
         <ResumenVacante vacante={vacante} />
         <InformacionAdicionalVacante vacante={vacante} />
-        <AccionesVacante vacante={vacante} yaPostulado={yaPostulado} onPostular={solicitarPostulacion} />
+        <AccionesVacante vacante={vacante} yaPostulado={yaPostulado} onPostular={solicitarPostulacion} >
+          {perfil?.rol === 'candidato' && (
+            <BotonFavorita vacanteId={vacante.id} candidatoId={usuario.id} />
+          )}
+        </AccionesVacante>
 
       </div>
 
