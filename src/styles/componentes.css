@@ -610,6 +610,8 @@
   box-shadow: none;
 }
 
-
+.input--corto {
+  max-width: 10rem;
+}
 
 
