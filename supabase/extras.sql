@@ -46,6 +46,10 @@ grant update (etapa) on public.solicitudes to authenticated;
 -- =========================================================
 -- RF-041: VACANTES FAVORITAS
 -- La llave primaria compuesta impide guardar la misma vacante dos veces.
+-- OJO: al existir esta tabla hay dos caminos de "vacantes" a "perfiles"
+-- (empresa_id y favoritos). En las consultas de React hay que indicar cuál:
+--   empresa:perfiles!vacantes_empresa_id_fkey(nombre)
+-- Si no, Supabase responde con el error PGRST201.
 -- =========================================================
 create table if not exists public.favoritos (
   candidato_id uuid   not null references public.perfiles (id) on delete cascade,
