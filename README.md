@@ -234,8 +234,10 @@ La siguiente tabla presenta el estado de los requerimientos funcionales consider
 **Significado de los estados:**
 
 - ✅ **Completo:** funcionalidad implementada y disponible.
-- 🟡 **Parcial:** existe una implementación, pero no cubre todos los criterios de aceptación originales.
+- 🟡 **Parcial:** existe una implementación o planteamiento, pero no cubre todos los criterios de aceptación originales.
 - ❌ **Pendiente:** funcionalidad no implementada.
+
+> El cumplimiento de los requerimientos se tomó en base al documento de Requerimientos AMAC, que a veces contenía más detalle que los vistos en la entrega obligatoria
 
 | RF | Requerimiento | Estado |
 |---|---|:---:|
@@ -251,9 +253,9 @@ La siguiente tabla presenta el estado de los requerimientos funcionales consider
 | RF-010 | Restringir el acceso según el rol | ✅ |
 | RF-011 | Registrar un candidato | 🟡 |
 | RF-012 | Registrar perfil profesional del candidato | 🟡 |
-| RF-013 | Aceptar términos y política de privacidad | ❌ |
+| RF-013 | Aceptar términos y política de privacidad | ✅ |
 | RF-014 | Editar el perfil del candidato | 🟡 |
-| RF-015 | Registrar una empresa | 🟡 |
+| RF-015 | Registrar una empresa | ✅ |
 | RF-016 | Cargar logo y banner de la empresa | 🟡 |
 | RF-017 | Editar perfil de la empresa | 🟡 |
 | RF-018 | Validar registro de empresas | ❌ |
@@ -272,7 +274,7 @@ La siguiente tabla presenta el estado de los requerimientos funcionales consider
 | RF-031 | Mostrar visión, misión y motivos de AMAC | 🟡 |
 | RF-032 | Mostrar descripción, gobernanza y organización | 🟡 |
 | RF-033 | Mostrar actividades y líneas de acción | 🟡 |
-| RF-034 | Mostrar enlace a donativos | 🟡 |
+| RF-034 | Mostrar enlace a donativos | ❌ |
 | RF-035 | Consultar CV de candidatos | ❌ |
 | RF-036 | Validación de CV adjunto | ❌ |
 | RF-037 | Filtrar vacantes por distancia | ❌ |
