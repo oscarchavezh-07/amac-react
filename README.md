@@ -4,12 +4,24 @@ Aplicación web desarrollada para la Asociación Mexicana de Ayuda a los Adultos
 
 El sistema permite la interacción entre tres tipos de usuarios: candidatos, empresas y administradores. Cuenta con autenticación, control de acceso por roles, almacenamiento de información en una base de datos y gestión de archivos.
 
-## 0. Miembros del equipo
+## 0. Miembros del equipo y cuentas de prueba
 * Oscar Eduardo Chávez Hernández: Mantenimiento del repositorio, flujos obligatorios [y respectivos componentes] de candidato y empresa, mantenimiento de la BD en Supabase, publicación en Vercel,
 * Javier Oscar Wong Mora: Flujo de las pantallas y componentes opcionales, apoyo con la BD relacionada a los extras, corección de algunos errores
 * Mariana Gomez del Angel: Diseño de la presentación y guión para video, comienzo de las pantallas de perfil
 * Marco Antonio Monsivais Macias: Contribución del README. y algunos componentes de alertas
 ###### El readme estaba en otra rama a la que no le hicieron merge... por eso si están los otros contribuidores pero no aparecen en el dashboard de main
+### Cuentas de prueba
+Empresa:
+aperture@mail.com
+contraseña: 12345678
+
+Candidato sin aprobar:
+pedro@mail.com
+contraseña: 12345678
+
+Candidato aprovado:
+elena@mail.com
+contraseña: 12345678
 ## 1. Tecnologías utilizadas
 
 | Tecnología | Uso |
