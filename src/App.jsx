@@ -15,6 +15,7 @@ import RegistroCandidato from './pages/RegistroCandidato';
 import RegistroEmpresa from './pages/RegistroEmpresa';
 import RutaProtegida from './components/RutaProtegida';
 import PublicarVacante from './pages/PublicarVacante';
+import EmpresaVacantes from './pages/EmpresaVacantes';
 
 function Portal() {
     return (
@@ -44,6 +45,7 @@ function App() {
          <Route path="/registro-empresa" element={<RegistroEmpresa />} />
          <Route path="/registro-empresa" element={<RegistroEmpresa />} />
          <Route path="/empresa/publicar" element={<RutaProtegida rol="empresa"><PublicarVacante /></RutaProtegida>} />
+         <Route path="/empresa/vacantes" element={<RutaProtegida rol="empresa"><EmpresaVacantes /></RutaProtegida>} />
             <Route path="*" element={ sesion ? <Portal /> : <Login /> } />
         </Routes>
     );
