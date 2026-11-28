@@ -9,7 +9,7 @@ El sistema permite la interacción entre tres tipos de usuarios: candidatos, emp
 * Javier Oscar Wong Mora: Flujo de las pantallas y componentes opcionales, apoyo con la BD relacionada a los extras, corección de algunos errores
 * Mariana Gomez del Angel: Diseño de la presentación y guión para video, comienzo de las pantallas de perfil
 * Marco Antonio Monsivais Macias: Contribución del README. y algunos componentes de alertas
-###### El readme estaba en otra rama a la que no le hicieron merge...
+###### El readme estaba en otra rama a la que no le hicieron merge... por eso si están los otros contribuidores pero no aparecen en el dashboard de main
 ## 1. Tecnologías utilizadas
 
 | Tecnología | Uso |
