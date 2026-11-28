@@ -15,6 +15,7 @@ import MisSolicitudes from './pages/MisSolicitudes';
 import RegistroEmpresa from './pages/RegistroEmpresa'
 import VacantesEmpresa from './pages/VacantesEmpresa';
 import CrearVacante from './pages/CrearVacante'
+import SolicitudesRecibidas from './pages/SolicitudesRecibidas'
 
 function Portal() {
     return (
@@ -45,6 +46,7 @@ function PortalEmpresa() {
           <Route path="/vacantes-empresa" element={<VacantesEmpresa />} />
           <Route path="/crear-vacante" element={<CrearVacante />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/solicitudes-recibidas" element={<SolicitudesRecibidas />} />
         </Routes>
       </div>
 

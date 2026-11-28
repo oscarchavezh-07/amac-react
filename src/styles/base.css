@@ -211,12 +211,12 @@ time {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.campo-registro select {
+select {
   min-height: 3.25rem;
   cursor: pointer;
 }
 
-.campo-registro select:invalid {
+select:invalid {
   color: var(--contorno);
 }
 
@@ -235,7 +235,7 @@ time {
   color: var(--texto);
 }
 
-.campo-registro select:focus,
+select:focus,
 .campo-registro textarea:focus {
   outline: none;
   border-color: var(--header-y-botones-principales);
@@ -247,7 +247,7 @@ time {
   opacity: 1;
 }
 
-.campo-registro select:disabled,
+select:disabled,
 .campo-registro textarea:disabled {
   background-color: var(--fondo);
   color: var(--contorno);
@@ -255,7 +255,7 @@ time {
 }
 
 @media (max-width: 768px) {
-  .campo-registro select,
+  select,
   .campo-registro textarea {
     font-size: 1rem;
   }

@@ -69,13 +69,15 @@ export default function TarjetaSolicitudEmpresa({
 
             <div className="solicitud-cambio-estatus">
               <label htmlFor={`estatus-${solicitud.id}`}> Actualizar estatus </label>
-
-              <select id={`estatus-${solicitud.id}`} value={nuevoEstatus} onChange={e => setNuevoEstatus(e.target.value)} disabled={procesando} >
+              <br/>
+              <br/>
+              <select className="boton" id={`estatus-${solicitud.id}`} value={nuevoEstatus} onChange={e => setNuevoEstatus(e.target.value)} disabled={procesando} >
                 <option value="Enviada" disabled> Enviada </option>
                 <option value="En revisión"> En revisión </option>
                 <option value="Aceptada"> Aceptada </option>
                 <option value="Rechazada"> Rechazada </option>
               </select>
+              <br/>
 
               <button type="button" className="boton boton-principal" disabled={ procesando || nuevoEstatus === solicitud.estatus } onClick={() => onCambiarEstatus(solicitud, nuevoEstatus) } >
                 {procesando ? 'Actualizando...' : 'Guardar estatus'}
