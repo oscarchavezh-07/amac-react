@@ -6,11 +6,10 @@ El sistema permite la interacción entre tres tipos de usuarios: candidatos, emp
 
 ## 0. Miembros del equipo
 * Oscar Eduardo Chávez Hernández: Mantenimiento del repositorio, flujos obligatorios [y respectivos componentes] de candidato y empresa, mantenimiento de la BD en Supabase, publicación en Vercel,
-  ###### Aparentemente escribir este README ahora también
 * Javier Oscar Wong Mora: Flujo de las pantallas y componentes opcionales, apoyo con la BD relacionada a los extras, corección de algunos errores
-* Mariana Gomez del Angel: Diseño de la presentación y guión para video, comienzo de las pantallas de perfil...
-* Marco Antonio Monsivais Macias: inicialización del flujo de la empresa... 
-Y todos contribuyeron para el video... supongo
+* Mariana Gomez del Angel: Diseño de la presentación y guión para video, comienzo de las pantallas de perfil
+* Marco Antonio Monsivais Macias: Contribución del README. y algunos componentes de alertas
+###### El readme estaba en otra rama a la que no le hicieron merge...
 ## 1. Tecnologías utilizadas
 
 | Tecnología | Uso |
