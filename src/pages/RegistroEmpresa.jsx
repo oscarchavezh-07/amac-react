@@ -117,7 +117,7 @@ export default function RegistroEmpresa() {
 
   if (registrado) {
     return (
-      <section className="flujo-empresa pagina-registro" aria-labelledby="titulo-registro">
+      <section className="pagina-registro" aria-labelledby="titulo-registro">
         <div className="login-contenedor">
           <h1 id="titulo-registro">Verificación de Registro</h1>
           <hr className="login-separador" />
@@ -131,7 +131,7 @@ export default function RegistroEmpresa() {
   }
 
   return (
-    <section className="flujo-empresa pagina-registro" aria-labelledby="titulo-registro">
+    <section className="pagina-registro" aria-labelledby="titulo-registro">
       <div className="login-contenedor">
         <h1 id="titulo-registro">Registrarse como Empresa</h1>
         <p>Los campos con * son obligatorios.</p>
@@ -142,7 +142,7 @@ export default function RegistroEmpresa() {
         <form className="registro-form" onSubmit={registrar} noValidate>
           <div className="registro-columna">
             <fieldset className="registro-grupo">
-              <legend className="registro-encabezado">Datos de la empresa</legend>
+              <legend className="registro-subtitulo">Datos de la empresa</legend>
 
               <CampoFormulario id="nombre" etiqueta="Nombre de la empresa*" error={errores.nombre}>
                 <input className="input" type="text" autoComplete="organization" {...propsDe('nombre')} />
@@ -160,7 +160,7 @@ export default function RegistroEmpresa() {
 
           <div className="registro-columna">
             <fieldset className="registro-grupo">
-              <legend className="registro-encabezado">Cuenta</legend>
+              <legend className="registro-subtitulo">Cuenta</legend>
 
               <CampoFormulario id="correo" etiqueta="Correo*" error={errores.correo}>
                 <input className="input" type="email" autoComplete="email" {...propsDe('correo')} />

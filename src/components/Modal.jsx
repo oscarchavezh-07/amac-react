@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+
 export default function Modal({ titulo, claseTitulo = '', ancho = 'normal', bloqueado = false, onCerrar, children }) {
   const refTitulo = useRef(null)
 
