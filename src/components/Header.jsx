@@ -1,16 +1,20 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { supabase } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext'
 
 import logo from "../assets/logo-header0.png";
 import iconoAyuda from "../assets/icono-tel-fono0.svg";
 import iconoMenu from "../assets/menu0.png";
 
 function Header() {
+  const { perfil } = useAuth();
+
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [cargando, setCargando] = useState(false);
 
   const navigate = useNavigate();
+  const esEmpresa = perfil?.rol === 'empresa'
 
   async function cerrarSesion() {
     setCargando(true);
@@ -59,15 +63,31 @@ function Header() {
               </div>
 
               <nav className="nav" aria-label="Navegación principal" >
-                  <NavLink to="/" end className={({ isActive }) => isActive ? 'current-page' : '' } >
-                      Vacantes
-                  </NavLink>
-                  <NavLink to="/mis-solicitudes" className={({ isActive }) => isActive ? 'current-page' : '' } >
-                      Solicitudes
-                  </NavLink>
-                  <NavLink to="/mi-perfil" className={({ isActive }) => isActive ? 'current-page' : '' } >
-                      Perfil
-                  </NavLink>
+                  {esEmpresa ? (
+                    <>
+                      <NavLink to="/vacantes-empresa" className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Vacantes
+                      </NavLink>
+                      <NavLink to="/solicitudes-recibidas" className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Solicitudes
+                      </NavLink>
+                      <NavLink to="/mi-perfil-empresa" className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Perfil
+                      </NavLink>
+                    </>
+                  ) : (
+                    <>
+                      <NavLink to="/" end className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Vacantes
+                      </NavLink>
+                      <NavLink to="/mis-solicitudes" className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Solicitudes
+                      </NavLink>
+                      <NavLink to="/mi-perfil" className={({ isActive }) => isActive ? 'current-page' : '' } >
+                        Perfil
+                      </NavLink>
+                    </>
+                )}
               </nav>
           </header>
       </>
